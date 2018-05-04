@@ -40,12 +40,12 @@ switch($s){
 
 		echo "
 			<div class=\"panel panel-primary\">
-            <div class=\"panel-heading\">
-              <h3 class=\"panel-title\">".$thisUsername."'s Home</h3>
-            </div>
-            <div class=\"panel-body\">
-            <br>
-            <br>";
+            		<div class=\"panel-heading\">
+              		<h3 class=\"panel-title\">".$thisUsername."'s Home</h3>
+            		</div>
+            		<div class=\"panel-body\">
+            		<br>
+            		<br>";
             
 		if(isAdmin()) {
 			echo "<a href=\"add.php?s=90\" class=\"btn btn-default\"> Add/Delete Users </a>";
@@ -74,7 +74,7 @@ switch($s){
 			<br>
 			<br>
 			</div>
-          	</div>";
+          		</div>";
 	break;
 	
 	
@@ -83,10 +83,10 @@ switch($s){
 		if(!isAdmin()) {
 			echo "
 				<div class=\"panel panel-success\">
-            	<div class=\"panel-heading\">
-              	<h3 class=\"panel-title\">Add Peer</h3>
-            	</div>
-            	<div class=\"panel-body\">
+            			<div class=\"panel-heading\">
+              			<h3 class=\"panel-title\">Add Peer</h3>
+            			</div>
+            			<div class=\"panel-body\">
 				<form method=\"post\" action=\"add.php\" id=\"addPeerForm\">
 					<table>
 						<tbody>
@@ -104,16 +104,16 @@ switch($s){
 				<br>
 				<br>
 				</div>
-          		</div>";
+          			</div>";
 			
 			echo "<br><br>";
 			
 			echo "
 				<div class=\"panel panel-danger\">
-            	<div class=\"panel-heading\">
-              	<h3 class=\"panel-title\">Remove Peer</h3>
-            	</div>
-            	<div class=\"panel-body\">
+            			<div class=\"panel-heading\">
+              			<h3 class=\"panel-title\">Remove Peer</h3>
+            			</div>
+            			<div class=\"panel-body\">
 				<form method=\"post\" action=\"add.php\" id=\"delPeerForm\">
 					<table>
 						<tbody>
@@ -131,7 +131,7 @@ switch($s){
 				<br>
 				<br>
 				</div>
-          		</div>";
+          			</div>";
 			
 		} else {
 			echo "Permission Denied: No Access for admin";
@@ -179,25 +179,25 @@ switch($s){
 								echo "
 									<div class=\"alert alert-warning\" role=\"alert\">
         								<strong>Warning!</strong> You Shared Your Story With Peer: $peer
-      								</div>";
+      									</div>";
 							} else {
 								echo "
 									<div class=\"alert alert-danger\" role=\"alert\">
        									<strong>Error!</strong> The User You Entered Does Not Exists. Check the spelling.
-      								</div>";
+      									</div>";
 							}
 						} else {
 							echo "
 								<div class=\"alert alert-danger\" role=\"alert\">
         							<strong>Error!</strong> You Have Already Shared With This User: $peer
-      							</div>";
+      								</div>";
 						}
 					
 					} else {
 						echo "
 							<div class=\"alert alert-danger\" role=\"alert\">
         						<strong>Error!</strong> You Are This User: $peer
-      						</div>";
+      							</div>";
 					}
 				
 				} else {
@@ -235,19 +235,19 @@ switch($s){
 							echo "
 								<div class=\"alert alert-success\" role=\"alert\">
        								<strong>Done!</strong> You Successfully Removed This Peer From Your Story: $peer
-      							</div>";
+      								</div>";
 						} else {
 							echo "
 								<div class=\"alert alert-danger\" role=\"alert\">
        								<strong>Error!</strong> The User You Entered Does Not Exists. Check the spelling.
-      							</div>";
+      								</div>";
 						}
 				
 					} else {
 						echo "
 							<div class=\"alert alert-danger\" role=\"alert\">
        							<strong>Error!</strong> Tried To Remove Yourself From Your Own Sharing.
-      						</div>";
+      							</div>";
 					}
 				
 				} 	
@@ -301,7 +301,7 @@ switch($s){
 				echo "
 					<div class=\"alert alert-warning\" role=\"alert\">
        					<strong>Wait!</strong> You already have a story saved, if you want to store a new story then delete your old story first.
-      				</div>";
+      					</div>";
 			}
 			
 		} else {
@@ -330,16 +330,10 @@ switch($s){
 
 // Encryption 256-bit AES		
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-			//$plain_txt = "This is my plain text";
-			//echo "Plain Text =" .$story. "\n <br>";
+			//echo "Plain Text =" .$story. " <br>";
 			$estory = encrypt_decrypt('encrypt', $story,$salt);
-			//echo "Encrypted Text = " .$estory. "\n <br>";
+			//echo "Encrypted Text = " .$estory. " <br>";
 			$decrypted_txt = encrypt_decrypt('decrypt', $estory,$salt);
-			//echo "Decrypted Text =" .$decrypted_txt. "\n <br>";
-		
-			//if ( $story === $decrypted_txt ) echo "SUCCESS";
-			//else echo "FAILED";
-			//echo "\n <br>";
 
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 		
@@ -351,7 +345,7 @@ switch($s){
 				echo "
 					<div class=\"alert alert-success\" role=\"alert\">
         				<strong>Success!</strong> Your Story Is Secure
-      				</div>";
+      					</div>";
 			}
 
 		} else {
@@ -367,10 +361,10 @@ switch($s){
 		if(!isAdmin()) {
 			echo "
 				<div class=\"panel panel-danger\">
-            	<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Warning!</h3>
-            	</div>
-           		<div class=\"panel-body\">
+            			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Warning!</h3>
+            			</div>
+           			<div class=\"panel-body\">
 					<p> Are you sure you want to permenantely delete your story? </p>
 						<form method=\"post\" action=\"add.php\" id=\"deleteForm\">
 						</form>
@@ -402,7 +396,7 @@ switch($s){
 				echo "
 					<div class=\"alert alert-success\" role=\"alert\">
        				 	<strong>Success!</strong> Your Story Has Been Completely Deleted From The Database!
-      				</div>";
+      					</div>";
 			}
 		
 		} else {
@@ -460,10 +454,10 @@ switch($s){
 		
 			echo "
 				<div class=\"panel panel-primary\">
-            	<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">These Peers have shared their story with you</h3>
-            	</div>
-           		<div class=\"panel-body\">
+            			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">These Peers have shared their story with you</h3>
+            			</div>
+           			<div class=\"panel-body\">
 				<center>
 				<div>
           			<table class=\"table table-striped\">
@@ -493,11 +487,11 @@ switch($s){
 				}
 			}
   			echo "
-  						</tbody>
+  					</tbody>
          			</table>
-         		</div>
+         			</div>
 				</div>
-        		</div>";
+        			</div>";
   		
   			echo "<br><br>";
   		
@@ -509,10 +503,10 @@ switch($s){
 		
 			echo "
 				<div class=\"panel panel-danger\">
-            	<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">You Have Shared Your Story With These Peers</h3>
-            	</div>
-            	<div class=\"panel-body\">
+            			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">You Have Shared Your Story With These Peers</h3>
+            			</div>
+            			<div class=\"panel-body\">
 				<center>
 				<div>
           			<table class=\"table table-striped\">
@@ -522,7 +516,7 @@ switch($s){
                 				<th>Username</th>
               				</tr>
             			</thead>
-            		<tbody>";
+            			<tbody>";
 		
 			$counter=0;
 			$query="select sharedUsername from sharedWith where userid='$thisUserid'";
@@ -538,12 +532,12 @@ switch($s){
 			}
 		
   			echo "
-  						</tbody>
+  					</tbody>
          			</table>
-         		</div>
-         		</div>
-        		</div>
-        		</div>";
+         			</div>
+         			</div>
+        			</div>
+        			</div>";
     	
     	} else {
 			echo "Permission Denied: No Access for admin";
@@ -599,18 +593,18 @@ switch($s){
 		if(!isAdmin()) {
 			echo "
 				<div class=\"panel panel-danger\">
-            	<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Nuke All Your Data</h3>
-            	</div>
-            	<div class=\"panel-body\">
-				<h4> This will eradicate your user from Collective. This permanently deletes your story, your user, and everything about you, and everything anyone ever shared with you. This effectively Nukes all information related to your user from the system. </h4>
-				<form method=\"post\" action=\"add.php\" id=\"deleteUserForm\">
-				</form>
-				<button type=\"submit\" form=\"deleteUserForm\" class=\"btn btn-primary\" name=\"s\" value=\"15\">Yes, Destroy Me</button>
-				<br>
-				<br>
+            			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Nuke All Your Data</h3>
+            			</div>
+            			<div class=\"panel-body\">
+					<h4> This will eradicate your user from Collective. This permanently deletes your story, your user, and everything about you, and everything anyone ever shared with you. This effectively Nukes all information related to your user from the system. </h4>
+					<form method=\"post\" action=\"add.php\" id=\"deleteUserForm\">
+					</form>
+					<button type=\"submit\" form=\"deleteUserForm\" class=\"btn btn-primary\" name=\"s\" value=\"15\">Yes, Destroy Me</button>
+					<br>
+					<br>
 				</div>
-        		</div>";
+        			</div>";
 			
 		} else {
 			echo "Permission Denied: No Access for admin";
@@ -669,10 +663,10 @@ switch($s){
 		if(isAdmin()) {
 			echo "
 				<div class=\"panel panel-success\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Add User</h3>
-            	</div>
-            	<div class=\"panel-body\">
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Add User</h3>
+            			</div>
+            			<div class=\"panel-body\">
 					<form method=\"post\" action=\"add.php\" id=\"addUserForm\">
 						<table>
 							<tbody>
@@ -699,7 +693,7 @@ switch($s){
 					<br>
 					<br>
 				</div>
-          		</div>";
+          			</div>";
         		
         	echo "<br><br>";
         		
@@ -707,25 +701,25 @@ switch($s){
         		<div class=\"panel panel-danger\">
            		<div class=\"panel-heading\">
             		<h3 class=\"panel-title\">Delete User</h3>
-            	</div>
-            	<div class=\"panel-body\">
-					<form method=\"post\" action=\"add.php\" id=\"delUserForm\">
-						<table>
-							<tbody>
-								<tr>
-									<td colspan=\"2\"> Delete User from Collective </td>
-								</tr>
-								<tr>
-									<td> Username: </td>
-									<td><input type=\"text\" name=\"delUser\" value=\"\"></td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
-					<button type=\"submit\" form=\"delUserForm\" class=\"btn btn-danger\" value=\"91\" name=\"s\" >Delete User</button>
-					<br>
-					<br>
-				</div>
+            		</div>
+            		<div class=\"panel-body\">
+				<form method=\"post\" action=\"add.php\" id=\"delUserForm\">
+					<table>
+						<tbody>
+							<tr>
+								<td colspan=\"2\"> Delete User from Collective </td>
+							</tr>
+							<tr>
+								<td> Username: </td>
+								<td><input type=\"text\" name=\"delUser\" value=\"\"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+				<button type=\"submit\" form=\"delUserForm\" class=\"btn btn-danger\" value=\"91\" name=\"s\" >Delete User</button>
+				<br>
+				<br>
+			</div>
           		</div>";
         		
 		} else {
@@ -764,14 +758,14 @@ switch($s){
 					echo "
 						<div class=\"alert alert-success\" role=\"alert\">
        						<strong>Success!</strong> New User: $newUser Has Been Added To Collective!
-      					</div>";
+      						</div>";
 					echo "<br>";
 				
 				} else {
 					echo "
 						<div class=\"alert alert-danger\" role=\"alert\">
        						<strong>Error!</strong> The Username $newUser Already Exists
-      					</div>";
+      						</div>";
 				}
 			
 			} 
@@ -816,21 +810,21 @@ switch($s){
 						echo "
 							<div class=\"alert alert-success\" role=\"alert\">
        							<strong>Success!</strong> Deleted User: $delUser From Collective!
-      						</div>";
+      							</div>";
 						echo "<br>";
 				
 					} else {
 						echo "
 							<div class=\"alert alert-danger\" role=\"alert\">
        							<strong>Error!</strong> User: $delUser Does Not Exist!
-      						</div>";
+      							</div>";
 					}			
 				}
 			} else {
 				echo "
 					<div class=\"alert alert-danger\" role=\"alert\">
        					<strong>Error!</strong> Cannot Delete This User: $delUser!
-      				</div>";
+      					</div>";
 			}				
 		} else {
 			echo "Permission Denied: No Access for user";
@@ -845,19 +839,19 @@ switch($s){
 		
 			echo "
 				<div class=\"panel panel-success\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Current Users</h3>
-            	</div>
-            	<div class=\"panel-body\">
-            	<div>
-            		<table class=\"table table-striped\">
-            			<thead>
-              				<tr>
-                				<th> </th>
-                				<th>Username</th>
-              				</tr>
-            			</thead>
-            		<tbody>";
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Current Users</h3>
+            			</div>
+            			<div class=\"panel-body\">
+            			<div>
+            				<table class=\"table table-striped\">
+            					<thead>
+              						<tr>
+                						<th> </th>
+                						<th>Username</th>
+              						</tr>
+            					</thead>
+            				<tbody>";
             	
 			$counterUsers=1;
   			$query="select username from users";
@@ -871,12 +865,12 @@ switch($s){
 			}
   			echo "
   						</tbody>
-         			</table>
-         		</div>
+         				</table>
+         			</div>
   				<br>
 				<br>
 				</div>
-          		</div>";
+          			</div>";
 			
 			
 		} else {
@@ -892,12 +886,12 @@ switch($s){
 		
 			echo "
 				<div class=\"panel panel-warning\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Failed Admin Logins</h3>
-            	</div>
-            	<div class=\"panel-body\">
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Failed Admin Logins</h3>
+            			</div>
+            			<div class=\"panel-body\">
 					<table><tr><td><b><u> Failed Admin User Logins In Last 1 Hour </u></b></td></tr>\n
-					<tr><td> IP </td><td>  </td><td> count(IP) </td><td> Admin User </td></tr>\n";
+						<tr><td> IP </td><td>  </td><td> count(IP) </td><td> Admin User </td></tr>\n";
   			
   			$query2="select ip,count(ip),user from login where user='admin' and action='fail' and date > DATE_SUB(NOW(),INTERVAL 1 HOUR)";
 			$result2=mysqli_query($db, $query2);
@@ -913,11 +907,12 @@ switch($s){
 			
 			echo "
 				<div class=\"panel panel-warning\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">All Failed Logins</h3>
-            	</div>
-            	<div class=\"panel-body\">
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">All Failed Logins</h3>
+            			</div>
+            			<div class=\"panel-body\">
 					<table><tr><td><b><u> Display Log </u></b></td></tr>\n";
+			
   			$query="select * from login where action='fail'";
   			$result=mysqli_query($db, $query);
   			while($row=mysqli_fetch_row($result))  {
@@ -941,10 +936,10 @@ switch($s){
 		if(isAdmin()){
 			echo "
 				<div class=\"panel panel-success\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Add IP To Whitelist</h3>
-            	</div>
-            	<div class=\"panel-body\">
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Add IP To Whitelist</h3>
+            			</div>
+            			<div class=\"panel-body\">
 					<form method=\"post\" action=\"add.php\" id=\"addIpForm\">
 						<table>
 							<tbody>
@@ -962,17 +957,16 @@ switch($s){
 				<br>
 				<br>
 				</div>
-          		</div>";
-			
-  			
+          			</div>";
+					
   			echo "<br><br>";
   			
   			echo "
   				<div class=\"panel panel-danger\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Delete IP From Whitelist</h3>
-            	</div>
-            	<div class=\"panel-body\">
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Delete IP From Whitelist</h3>
+            			</div>
+            			<div class=\"panel-body\">
   				<form method=\"post\" action=\"add.php\" id=\"delIpForm\">
 					<table>
 						<tbody>
@@ -987,21 +981,21 @@ switch($s){
 					</table>
 				</form>
 				<button type=\"submit\" form=\"delIpForm\" class=\"btn btn-danger\" value=\"97\" name=\"s\" >Delete IP</button>
-				
 				<br>
 				<br>
 				</div>
-          		</div>";
+          			</div>";
         		
         	echo "<br><br>";	
 			
 			echo "
 				<div class=\"panel panel-primary\">
-           		<div class=\"panel-heading\">
-            		<h3 class=\"panel-title\">Whitelist</h3>
-            	</div>
-            	<div class=\"panel-body\">
+           			<div class=\"panel-heading\">
+            			<h3 class=\"panel-title\">Whitelist</h3>
+            			</div>
+            			<div class=\"panel-body\">
 				<table><tr><td><b><u> IP Whitelist </u></b></td></tr>\n";
+			
   				$query="select * from whitelist";
   				$result=mysqli_query($db, $query);
   				while($row=mysqli_fetch_row($result))  {
@@ -1012,7 +1006,7 @@ switch($s){
   				<br>
 				<br>
 				</div>
-          		</div>";
+          			</div>";
 			
 		} else {
 			echo "Permission Denied: No Access for user";
@@ -1035,7 +1029,7 @@ switch($s){
 				echo "
 					<div class=\"alert alert-success\" role=\"alert\">
        					<strong>Success!</strong> IP $whiteIP Has Been Added To The Whitelist
-      				</div>";
+      					</div>";
 			}
 			
 			echo "<br><br>";
@@ -1051,7 +1045,7 @@ switch($s){
 				echo "
 					<div class=\"alert alert-warning\" role=\"alert\">
        					<strong>Warning!</strong> IP $delwhiteIP Has Been Removed From The Whitelist
-      				</div>";
+      					</div>";
 			}
 			
 		} else {
