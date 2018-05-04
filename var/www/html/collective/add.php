@@ -433,7 +433,7 @@ switch($s){
 				<div class=\"jumbotron\">
         			<h3>My Story</h3>
         			<p>".$decrypted_txt."</p>
-      			</div>";
+      				</div>";
 
 		} else {
 			echo "Permission Denied: No Access for admin";
@@ -578,7 +578,7 @@ switch($s){
 				<div class=\"jumbotron\">
         			<h3>".$sharedUsername."'s Story</h3>
         			<p>".$decrypted_txt."</p>
-      			</div>";
+      				</div>";
 
 		} else {
 			echo "Permission Denied: No Access for admin";
@@ -857,7 +857,8 @@ switch($s){
   			$query="select username from users";
   			$result=mysqli_query($db, $query);
   			while($row=mysqli_fetch_row($result))  {
-				echo"<tr>
+				echo"
+					<tr>
 						<td> $counterUsers </td>
 						<td> $row[0] </td>
 					</tr>\n";
