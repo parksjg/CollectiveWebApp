@@ -49,9 +49,9 @@ Run the tui,
 
 
 <img src="img/1.png" width="500">
-<br>
+
 Enable and go to **Customize**.
-<br>
+
 <img src="img/2.png" width="500">
 
 Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22, 80, and 443. When done click on **Close**. Then select **Ok** and then **Yes**. Now that we are done configureing the firewall, let's check that our settings are correct.
@@ -60,7 +60,7 @@ Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22
 
 The output should yield the following:
 
-![iptables](img/3.png)
+<img src="img/3.png" width="500">
 
 Great!
 Now, let's configure and harden the database server.
@@ -104,7 +104,7 @@ Now, use the tui to allow **SSH**, but do not allow anything else. Next, we will
 `sudo iptables -L -n --line-numbers`
 
 And you should see the following:
-![iptables](img/4.png)
+<img src="img/4.png" width="500">
 
 Now let's add port 3306 for MySQL
 
@@ -119,4 +119,4 @@ Then run
 `sudo iptables -L -n --line-numbers`
 
 And check that you get the following:
-![iptables](img/5.png)
+<img src="img/5.png" width="500">
