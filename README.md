@@ -55,4 +55,4 @@ Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22
 
 The output should yield the following:
 
-
+![iptables](img/3.png)
