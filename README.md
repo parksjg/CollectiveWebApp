@@ -131,3 +131,82 @@ And once the file is transfered,
 
 The file has been successfully transfered.
 
+<img src="img/8.png" width="500">
+
+Now import collective.sql into MySQL with
+
+`mysql -uroot -p < collective.sql`
+
+`mysql -uroot -p collective`
+
+`> show tables;`
+<img src="img/9.png" width="500">
+`> quit`
+
+Now we need to create a new user in our MySQL that has access to the collective database.
+
+`mysql -uroot -p`
+
+`> create user 'ralphie'@'100.66.1.18' identified by 'buffalo';`
+
+`grant select, insert, update, delete on collective.* to 'ralphie'@'100.66.1.18' identified by 'buffalo';`
+
+Great!
+
+Now `ssh` into the web server (100.66.1.18) and try to connect to the database
+
+`ssh parksjg@100.66.1.18`
+
+`mysql -uralphie -p collective -h 100.66.2.18`
+
+Remember, the password for 'ralphie' is `buffalo`.
+<img src="img/10.png" width="500">
+
+We can access the database from the web server!
+
+Now, on the web server (100.66.1.18), we need to create a MySQL ini file to store the credentials for connecting to our database at 100.66.2.18. We will store this file outside of the document root as part of a layered security approach. We will place it in `/etc` and give only Apache special permission to read the file from there. The file name needs to be `collective.conf`.
+
+`sudo vi /etc/collective.conf`
+
+Now add the following:
+
+[mysql]
+user = ralphie
+pass = buffalo
+host = 100.66.2.18
+port = 3306
+dbName = collective
+
+<img src="img/11.png" width="500">
+Write and quit the file.
+
+The web server needs access to this file. So next we grant permissions.
+
+`sudo chmod 700 /etc/collective.conf`
+
+`sudo chown apache:apache /etc/collective.conf`
+
+Excellent!
+
+Now, still on the web server (100.66.1.18), let's go to the document root and creat a new directory for the webapp.
+
+`cd /var/www/html`
+
+`sudo mkdir collective`
+
+`cd collective`
+
+And now if we type `pwd` we should get `/var/www/html/collective`. Next let's connect to the web server (100.66.1.18) with FileZilla to transfer all the files for the webapp.
+<img src="img/12.png" width="500">
+
+Do a quick `ls` to check for the following files: **add.php**, **bootstrap**, **footer.php**, **header.php**, **index.php**, **lib.php**, and **login.php**.
+
+<img src="img/13.png" width="500">
+
+Now that all the files are on the web server, let's move them to our document root at `/var/www/html/collective/`.
+
+`sudo mv add.php footer.php header.php index.php lib.php login.php bootstrap/ /var/www/html/collective/`
+
+Then `cd` into the document root and check that you have the following:
+
+
