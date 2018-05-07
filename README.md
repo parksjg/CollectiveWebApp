@@ -60,7 +60,7 @@ Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22
 
 The output should yield the following:
 
-<img src="img/3.png" width="500">
+<img src="img/3.png" width="600">
 
 Great!
 Now, let's configure and harden the database server.
@@ -104,7 +104,7 @@ Now, use the tui to allow **SSH**, but do not allow anything else. Next, we will
 `sudo iptables -L -n --line-numbers`
 
 And you should see the following:
-<img src="img/4.png" width="500">
+<img src="img/4.png" width="700">
 
 Now let's add port 3306 for MySQL
 
@@ -119,4 +119,4 @@ Then run
 `sudo iptables -L -n --line-numbers`
 
 And check that you get the following:
-<img src="img/5.png" width="500">
+<img src="img/5.png" width="700">
