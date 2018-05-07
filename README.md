@@ -47,7 +47,8 @@ Run the tui,
 
 `sudo system-config-firewall-tui`
 
-![system-config-firewall-tui](img/1.png | width=100)
+
+<img src="img/1.png" width="48">
 
 Enable and go to **Customize**.
 
