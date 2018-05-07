@@ -177,11 +177,17 @@ Now, on the web server (100.66.1.18), we need to create a MySQL ini file to stor
 Now add the following:
 
 [mysql]
+
 user = ralphie
+
 pass = buffalo
+
 host = 100.66.2.18
+
 port = 3306
+
 dbName = collective
+
 
 <img src="img/11.png" width="500">
 
