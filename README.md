@@ -101,3 +101,7 @@ The database server needs to have MySQL allowed in on TCP port 3306. So, let's s
 Now, use the tui to allow **SSH**, but do not allow anything else. Next, we will add MySQL to iptables from the command line.
 
 `sudo iptables -L -n --line-numbers`
+
+And you should see the following:
+![iptables](img/4.png)
+
