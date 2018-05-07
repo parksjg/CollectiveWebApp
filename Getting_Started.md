@@ -239,7 +239,7 @@ Check that Apache is now listening on port 443:
 
 <img src="img/15.png" width="700">
 
-Next, we need to change `httpd.conf` to forward any port 80 traffice to HTTPS on 443.
+Next, we need to change `httpd.conf` to forward any port 80 traffic to HTTPS on 443.
 
 `sudo vi /etc/httpd/conf/httpd.conf`
 
