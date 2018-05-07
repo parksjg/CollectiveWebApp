@@ -15,6 +15,10 @@ First, let's configure and harden the webserver.
 
 Now, we need to install some things,
 
+`sudo yum install yum-cron-security` (This automatically updates security packages)
+
+`sudo yum update -y`
+
 `yum install php httpd php-mysqlnd`
 
 this will install Apache, MySql, and PHP.
@@ -56,3 +60,44 @@ Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22
 The output should yield the following:
 
 ![iptables](img/3.png)
+
+Great!
+Now, let's configure and harden the database server.
+
+`ssh parksjg@100.66.2.18`
+
+`sudo yum install yum-cron-security` (This automatically updates security packages)
+
+`sudo yum update -y`
+
+Now add MariaDB
+
+`sudo dnf install mariadb -y`
+
+`sudo dnf install mariadb-server -y`
+
+`sudo chkconfig mariadb on` (Set mariadb to start on boot)
+
+`setenforce 0` (SE Linux set to 'Enforcing')
+
+`sudo service mariadb start`
+
+Next, let's lock down MySQL
+
+`sudo mysql_secure_installation`
+
+Add a root password, remove anonymous users, disallow root login remotely, remove test database and access to it, and reload the privileges table.
+
+The database server needs to have MySQL allowed in on TCP port 3306. So, let's set up the firewall. This time we will do it slightly different.
+
+`sudo systemctl stop firewalld`
+
+`sudo dnf erase firewalld`
+
+`sudo dnf install system-config-firewall-tui`
+
+`sudo dnf install iptable-services`
+
+Now, use the tui to allow **SSH**, but do not allow anything else. Next, we will add MySQL to iptables from the command line.
+
+`sudo iptables -L -n --line-numbers`
