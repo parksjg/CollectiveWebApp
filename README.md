@@ -6,7 +6,7 @@ The Collective web application will enable the sharing of encrypted text among u
 
 ## Security Features
 
-Everything must be secured in layers.
+Secured in layers.
   + Require authentication
   + Logging failed and suspicous logins
   + Brute force password protection
@@ -18,6 +18,7 @@ Everything must be secured in layers.
   + Sessions
   + Prepared SQL statements
   + Checks for SQLi
+  
   
   ## Application Layout
   
