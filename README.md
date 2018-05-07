@@ -198,11 +198,11 @@ Now, still on the web server (100.66.1.18), let's go to the document root and cr
 
 And now if we type `pwd` we should get `/var/www/html/collective`. Next let's connect to the web server (100.66.1.18) with FileZilla to transfer all the files for the webapp.
 
-<img src="img/12.png" width="500">
+<img src="img/12.png" width="700">
 
 Do a quick `ls` to check for the following files: **add.php**, **bootstrap**, **footer.php**, **header.php**, **index.php**, **lib.php**, and **login.php**.
 
-<img src="img/13.png" width="500">
+<img src="img/13.png" width="700">
 
 Now that all the files are on the web server, let's move them to our document root at `/var/www/html/collective/`.
 
@@ -210,7 +210,7 @@ Now that all the files are on the web server, let's move them to our document ro
 
 Then `cd` into the document root and check that you have the following:
 
-<img src="img/14.png" width="500">
+<img src="img/14.png" width="700">
 
 Still on the web server (100.66.1.18), install mod_ssl.
 
@@ -224,7 +224,7 @@ Check that Apache is now listening on port 443:
 
 `sudo netstat -an | grep 443`
 
-<img src="img/15.png" width="500">
+<img src="img/15.png" width="700">
 
 Next, we need to change `httpd.conf` to forward any port 80 traffice to HTTPS on 443.
 
