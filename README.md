@@ -10,25 +10,33 @@ I have 2 VM's in the cloud. Both VM's are running Fedora 26.
 + Database Server: `100.66.2.18`
 
 First, let's configure and harden the webserver.
+
 `ssh parksjg@100.66.1.18`
 
 Now, we need to install some things,
+
 `yum install php httpd php-mysqlnd`
 this will install Apache, MySql, and PHP.
 
 Start Apache with
+
 `service httpd restart`
+
 and make Apache start on boot
+
 `chkconfig httpd on`
 
 Now stop firewalld and erase it,
+
 `sudo systemctl stop firewalld`
 `sudo dnf erase firewalld`
 
 Next, install the firewall-tui and iptables,
+
 `sudo dnf install system-config-firewall-tui`
 `sudo dnf install iptables-services`
 
 Run the tui,
+
 `sudo system-config-firewall-tui`
 
