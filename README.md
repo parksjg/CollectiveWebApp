@@ -16,6 +16,7 @@ First, let's configure and harden the webserver.
 Now, we need to install some things,
 
 `yum install php httpd php-mysqlnd`
+
 this will install Apache, MySql, and PHP.
 
 Start Apache with
@@ -29,11 +30,13 @@ and make Apache start on boot
 Now stop firewalld and erase it,
 
 `sudo systemctl stop firewalld`
+
 `sudo dnf erase firewalld`
 
 Next, install the firewall-tui and iptables,
 
 `sudo dnf install system-config-firewall-tui`
+
 `sudo dnf install iptables-services`
 
 Run the tui,
