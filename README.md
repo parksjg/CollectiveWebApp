@@ -105,3 +105,17 @@ Now, use the tui to allow **SSH**, but do not allow anything else. Next, we will
 And you should see the following:
 ![iptables](img/4.png)
 
+Now let's add port 3306 for MySQL
+
+`sudo iptables -I INPUT 5 -s 100.66.1.18 -p TCP -m state --state new -m tcp --dport 3306 -j ACCEPT`
+
+`sudo service iptables save`
+
+`sudo service iptables restart`
+
+Then run
+
+`sudo iptables -L -n --line-numbers`
+
+And check that you get the following:
+![iptables](img/5.png)
