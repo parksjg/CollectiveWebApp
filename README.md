@@ -17,7 +17,7 @@ Secured in layers.
   + Encrypt data with Symmetric AES 256 with user-unique salt
   + Sessions
   + Prepared SQL statements
-  + Checks for SQLi
+  + Checks for SQLi and XSS
   
   
   ## Application Layout
