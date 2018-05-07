@@ -48,11 +48,11 @@ Run the tui,
 `sudo system-config-firewall-tui`
 
 
-<img src="img/1.png" width="48">
-
+<img src="img/1.png" width="500">
+<br>
 Enable and go to **Customize**.
-
-![Select services](img/2.png)
+<br>
+<img src="img/2.png" width="500">
 
 Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22, 80, and 443. When done click on **Close**. Then select **Ok** and then **Yes**. Now that we are done configureing the firewall, let's check that our settings are correct.
 
