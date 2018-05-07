@@ -119,6 +119,7 @@ Then run
 `sudo iptables -L -n --line-numbers`
 
 And check that you get the following:
+
 <img src="img/5.png" width="700">
 
 Now transfer the collective.sql file to the database server at `100.66.2.18`. I used **FileZilla** to do this.
@@ -140,7 +141,9 @@ Now import collective.sql into MySQL with
 `mysql -uroot -p collective`
 
 `> show tables;`
+
 <img src="img/9.png" width="500">
+
 `> quit`
 
 Now we need to create a new user in our MySQL that has access to the collective database.
@@ -160,6 +163,7 @@ Now `ssh` into the web server (100.66.1.18) and try to connect to the database
 `mysql -uralphie -p collective -h 100.66.2.18`
 
 Remember, the password for 'ralphie' is `buffalo`.
+
 <img src="img/10.png" width="500">
 
 We can access the database from the web server!
@@ -178,6 +182,7 @@ port = 3306
 dbName = collective
 
 <img src="img/11.png" width="500">
+
 Write and quit the file.
 
 The web server needs access to this file. So next we grant permissions.
