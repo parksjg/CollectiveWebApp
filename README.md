@@ -60,7 +60,7 @@ Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22
 
 The output should yield the following:
 
-<img src="img/3.png" width="600">
+<img src="img/3.png" width="700">
 
 Great!
 Now, let's configure and harden the database server.
@@ -124,11 +124,11 @@ And check that you get the following:
 
 Now transfer the collective.sql file to the database server at `100.66.2.18`. I used **FileZilla** to do this.
 
-<img src="img/6.png" width="500">
+<img src="img/6.png" width="700">
 
 And once the file is transfered,
 
-<img src="img/7.png" width="500">
+<img src="img/7.png" width="700">
 
 The file has been successfully transfered.
 
@@ -164,7 +164,7 @@ Now `ssh` into the web server (100.66.1.18) and try to connect to the database
 
 Remember, the password for 'ralphie' is `buffalo`.
 
-<img src="img/10.png" width="500">
+<img src="img/10.png" width="700">
 
 We can access the database from the web server!
 
