@@ -120,3 +120,14 @@ Then run
 
 And check that you get the following:
 <img src="img/5.png" width="700">
+
+Now transfer the collective.sql file to the database server at `100.66.2.18`. I used **FileZilla** to do this.
+
+<img src="img/6.png" width="500">
+
+And once the file is transfered,
+
+<img src="img/7.png" width="500">
+
+The file has been successfully transfered.
+
