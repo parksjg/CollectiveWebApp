@@ -60,6 +60,9 @@ The output should yield the following:
 <img src="img/3.png" width="700">
 
 Great!
+
+## Database Server
+
 Now, let's configure and harden the database server.
 
 `ssh parksjg@100.66.2.18`
@@ -152,6 +155,8 @@ Now we need to create a new user in our MySQL that has access to the collective 
 `grant select, insert, update, delete on collective.* to 'ralphie'@'100.66.1.18' identified by 'buffalo';`
 
 Great!
+
+## Back to the Web Server
 
 Now `ssh` into the web server (100.66.1.18) and try to connect to the database
 
