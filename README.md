@@ -47,3 +47,12 @@ Run the tui,
 
 Enable and go to **Customize**.
 
+![Select services](img/2.png)
+
+Be sure to select **SSH**, **WWW**, and **Secure WWW***. This will open ports 22, 80, and 443. When done click on **Close**. Then select **Ok** and then **Yes**. Now that we are done configureing the firewall, let's check that our settings are correct.
+
+`sudo cat /etc/sysconfig/iptables`
+
+The output should yield the following:
+
+
